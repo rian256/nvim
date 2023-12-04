@@ -9,3 +9,5 @@ o.termguicolors = true
 o.tabstop = 4
 o.lazyredraw = true
 o.relativenumber = true
+
+vim.cmd('colorscheme ayu')

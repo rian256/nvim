@@ -1,5 +1,4 @@
-require('options')
 require('plugins')
 require('config')
+require('options')
 
-vim.cmd("colorscheme ayu")
