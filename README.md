@@ -1,6 +1,7 @@
 #### My personal nvim configurations
 
 #### Directory Structure
+```
 ├── init.lua
 ├── lua
 │   ├── config.lua
@@ -8,5 +9,5 @@
 │   └── plugins.lua
 └── plugin
     └── packer_compiled.lua
-
+```
 
