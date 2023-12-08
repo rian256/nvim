@@ -30,6 +30,10 @@ return require("packer").startup(
         -- Ayu Theme
         use "ayu-theme/ayu-vim"
 
+		-- Catpuccin Theme 
+		use { "catppuccin/nvim", as = "catppuccin" }
+
+		-- Trouble 
         use "folke/trouble.nvim"
 
         -- lsp
@@ -52,6 +56,9 @@ return require("packer").startup(
                 run = "make install_jsregexp"
             }
         )
+
+		use 'nvim-treesitter/nvim-treesitter'
+
     end
 )
 

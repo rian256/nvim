@@ -38,32 +38,36 @@ require("lualine").setup {
     inactive_winbar = {},
     extensions = {}
 }
+
 require("nvim-tree").setup()
 local lspconfig = require("lspconfig")
 lspconfig.lua_ls.setup {}
-lspconfig.gopls.setup {}
-
-local use = require("packer").use
-require("packer").startup(
-    function()
-        use "neovim/nvim-lspconfig" -- Collection of configurations for built-in LSP client
-        use "hrsh7th/nvim-cmp" -- Autocompletion plugin
-        use "hrsh7th/cmp-nvim-lsp" -- LSP source for nvim-cmp
-        use "saadparwaiz1/cmp_luasnip" -- Snippets source for nvim-cmp
-        use "L3MON4D3/LuaSnip" -- Snippets plugin
-    end
+lspconfig.gopls.setup(
+    {
+        settings = {
+            gopls = {
+                staticcheck = true,
+				usePlaceholders = true,
+            }
+        }
+    }
 )
 
+require'lspconfig'.phpactor.setup{
+    on_attach = on_attach,
+    init_options = {
+        ["language_server_phpstan.enabled"] = true,
+        ["language_server_psalm.enabled"] = false,
+    }
+}
+require'lspconfig'.pyright.setup{}
 -- Add additional capabilities supported by nvim-cmp
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-local lspconfig = require("lspconfig")
-
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-local servers = {"clangd", "rust_analyzer", "pyright", "tsserver"}
+local servers = {"gopls", "tsserver"}
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
-        -- on_attach = my_custom_on_attach,
         capabilities = capabilities
     }
 end
