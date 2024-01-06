@@ -15,7 +15,7 @@ return require("packer").startup(
         use {
             "nvim-telescope/telescope.nvim",
             tag = "0.1.2",
-            requires = {{"nvim-lua/plenary.nvim"}}
+            requires = { {'nvim-lua/plenary.nvim'} }
         }
 
         -- devicons
@@ -29,6 +29,9 @@ return require("packer").startup(
 
         -- Ayu Theme
         use "ayu-theme/ayu-vim"
+
+		-- Iceberg Theme 
+		use 'shaunsingh/nord.nvim'
 
 		-- Catpuccin Theme 
 		use { "catppuccin/nvim", as = "catppuccin" }
@@ -59,6 +62,14 @@ return require("packer").startup(
 
 		use 'nvim-treesitter/nvim-treesitter'
 
-    end
+		-- install without yarn or npm
+use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+})
+
+use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+
+		end
 )
 
