@@ -7,7 +7,8 @@
 │   ├── config.lua
 │   ├── mappings.lua
 │   ├── options.lua
-│   └── plugins.lua
+│   ├── plugins.lua
+│   └── telescope_config.lua
 ├── plugin
 │   └── packer_compiled.lua
 └── README.md
