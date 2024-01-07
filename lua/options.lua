@@ -16,6 +16,6 @@ vim.cmd([[
     au ColorScheme * hi Normal guibg=NONE ctermbg=NONE
     au ColorScheme * hi LineNr guibg=NONE ctermbg=NONE
   augroup END
+	colorscheme ayu 
 ]])
 
-vim.cmd('colorscheme nord')
