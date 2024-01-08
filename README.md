@@ -6,12 +6,15 @@
 ```
 ├── init.lua
 ├── lua
-│   ├── config.lua
-│   ├── mappings.lua
-│   ├── options.lua
-│   ├── plugins.lua
-│   └── telescope_config.lua
+│   ├── completion.lua
+│   ├── core
+│   │   ├── keymaps.lua
+│   │   ├── options.lua
+│   │   └── plugins.lua
+│   ├── lsp
+│   │   └── servers.lua
+│   ├── lualine-nvim.lua
+│   └── tree.lua
 ├── plugin
-│   └── packer_compiled.lua
-└── README.md
+│   └── packer_compiled.lua
 ```
