@@ -15,7 +15,7 @@ return require("packer").startup(
         use {
             "nvim-telescope/telescope.nvim",
             tag = "0.1.2",
-            requires = { {'nvim-lua/plenary.nvim'} }
+            requires = {{"nvim-lua/plenary.nvim"}}
         }
 
         -- devicons
@@ -27,16 +27,12 @@ return require("packer").startup(
         -- lualine (A blazing fast and easy to configure Neovim statusline written in Lua.)
         use {"nvim-lualine/lualine.nvim"}
 
-        -- Ayu Theme
+        -- Themes 
         use "ayu-theme/ayu-vim"
+        use "shaunsingh/nord.nvim"
+        use {"catppuccin/nvim", as = "catppuccin"}
 
-		-- Iceberg Theme 
-		use 'shaunsingh/nord.nvim'
-
-		-- Catpuccin Theme 
-		use { "catppuccin/nvim", as = "catppuccin" }
-
-		-- Trouble 
+        -- Trouble
         use "folke/trouble.nvim"
 
         -- lsp
@@ -60,16 +56,7 @@ return require("packer").startup(
             }
         )
 
-		use 'nvim-treesitter/nvim-treesitter'
+        use "nvim-treesitter/nvim-treesitter"
 
-		-- install without yarn or npm
-use({
-    "iamcco/markdown-preview.nvim",
-    run = function() vim.fn["mkdp#util#install"]() end,
-})
-
-use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
-
-		end
+    end
 )
-

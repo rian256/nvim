@@ -10,12 +10,13 @@ o.tabstop = 4
 o.lazyredraw = true
 o.relativenumber = true
 
-vim.cmd([[
+vim.cmd(
+    [[
   augroup transparent_hl
     au!
     au ColorScheme * hi Normal guibg=NONE ctermbg=NONE
     au ColorScheme * hi LineNr guibg=NONE ctermbg=NONE
   augroup END
 	colorscheme ayu 
-]])
-
+]]
+)
