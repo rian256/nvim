@@ -1,7 +1,7 @@
 local luasnip = require "luasnip"
 
 -- nvim-cmp setup
-local cmp = require "lua.completion"
+local cmp = require'cmp'
 cmp.setup {
     snippet = {
         expand = function(args)
