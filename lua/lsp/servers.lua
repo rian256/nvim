@@ -1,6 +1,6 @@
 local lspconfig = require('lspconfig')
 
-require('lspconfig').yamlls.setup { -- other configuration for setup {}
+lspconfig.yamlls.setup { -- other configuration for setup {}
   settings = {
     yaml = { 
 		-- other settings. note this overrides the lspconfig defaults.
@@ -12,3 +12,16 @@ require('lspconfig').yamlls.setup { -- other configuration for setup {}
     },
   }
 }
+
+lspconfig.lua_ls.setup {}
+
+lspconfig.gopls.setup(
+    {
+        settings = {
+            gopls = {
+                staticcheck = true,
+                usePlaceholders = true
+            }
+        }
+    }
+)

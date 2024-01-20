@@ -1,13 +1,14 @@
-require("nvim-tree").setup()
-local lspconfig = require("lspconfig")
-lspconfig.lua_ls.setup {}
-lspconfig.gopls.setup(
-    {
-        settings = {
-            gopls = {
-                staticcheck = true,
-                usePlaceholders = true
-            }
-        }
-    }
-)
+require("nvim-tree").setup({
+	sort = {
+    sorter = "case_sensitive",
+  },
+  view = {
+    width = 35,
+  },
+  renderer = {
+    group_empty = true,
+  },
+  filters = {
+    dotfiles = true,
+  },
+})

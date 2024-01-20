@@ -4,7 +4,6 @@ return require("packer").startup(
     function(use)
         -- Packer can manage itself
         use "wbthomason/packer.nvim"
-
         -- Wakatime
         use "wakatime/vim-wakatime"
 
@@ -28,9 +27,7 @@ return require("packer").startup(
         use {"nvim-lualine/lualine.nvim"}
 
         -- Themes 
-        use "ayu-theme/ayu-vim"
-        use "shaunsingh/nord.nvim"
-        use {"catppuccin/nvim", as = "catppuccin"}
+	use {"rebelot/kanagawa.nvim"}		
 
         -- Trouble
         use "folke/trouble.nvim"

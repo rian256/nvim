@@ -1,9 +1,8 @@
 local map = vim.keymap.set
 
--- NVIMTREE
+-- NvimTree
 map("n", "<C-e>", "<cmd>NvimTreeToggle<CR>")
-
-map("n", "<C-r>", "<cmd>NvimTreeRefresh<CR>")
+map("n", "<C-p>", "<cmd>NvimTreeRefresh<CR>")
 
 -- Telescope
 local builtin = require("telescope.builtin")
